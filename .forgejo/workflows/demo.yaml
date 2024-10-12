@@ -35,7 +35,7 @@ on:
     branches: [ main ]
 jobs:
   container-test-job:
-    runs-on: self-hosted
+    runs-on: docker
     container:
       options: '--network=host'
     steps:
