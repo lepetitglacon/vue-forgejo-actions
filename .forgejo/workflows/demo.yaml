@@ -45,7 +45,7 @@ jobs:
       volumes:
         - my_docker_volume:/volume_mount
     steps:
-      - run: 'ls'
+      - run: 'echo ls'
       - run: 'npm i'
       - run: 'npm update'
       - run: 'npm audit fix'
