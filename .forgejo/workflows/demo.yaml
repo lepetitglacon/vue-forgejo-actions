@@ -44,11 +44,8 @@ jobs:
         - 80
       volumes:
         - my_docker_volume:/volume_mount
-      options: --cpus 1
     steps:
-      - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
-      - name: Check out repository code
-        uses: actions/checkout@v4
-#        with:
-#          github-server-url: 'http://127.0.0.1:3000'
+      - run: 'npm i'
+      - run: 'npm update'
+      - run: 'npm audit fix'
+      - run: 'npm run test:e2e'
