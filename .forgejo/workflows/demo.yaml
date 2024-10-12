@@ -37,7 +37,7 @@ jobs:
   container-test-job:
     runs-on: docker
     container:
-      image: ubuntu
+      image: alpine:3.20
       options: '--network=host'
     steps:
       - name: Check for dockerenv file
