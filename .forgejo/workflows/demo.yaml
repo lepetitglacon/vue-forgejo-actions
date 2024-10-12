@@ -14,8 +14,6 @@ jobs:
         uses: actions/setup-node@v4
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: npm update
-        run: 'npm update'
       - name: npm install
         run: 'npm i'
       - name: Unit test
