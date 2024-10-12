@@ -36,6 +36,8 @@ on:
 jobs:
   container-test-job:
     runs-on: self-hosted
+    container:
+      options: '--network=host'
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
