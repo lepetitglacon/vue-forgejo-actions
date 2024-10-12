@@ -35,7 +35,7 @@ on:
     branches: [ main ]
 jobs:
   container-test-job:
-    runs-on: docker
+    runs-on: self-hosted
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
