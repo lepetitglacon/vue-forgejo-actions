@@ -36,14 +36,6 @@ on:
 jobs:
   container-test-job:
     runs-on: docker
-    container:
-      image: node:18
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
     steps:
       - run: 'cd ../'
       - run: 'ls'
