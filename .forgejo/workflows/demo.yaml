@@ -45,7 +45,8 @@ jobs:
       volumes:
         - ${{ github.workspace }}:/app
       extra_hosts:
-          - "host.docker.internal:172.17.0.1"
+          - "host.docker.internal:172.0.0.1"
+          - "host.docker.internal:localhost"
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
