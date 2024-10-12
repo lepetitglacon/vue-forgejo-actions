@@ -37,6 +37,7 @@ jobs:
   container-test-job:
     runs-on: docker
     container:
+      image: ubuntu
       options: '--network=host'
     steps:
       - name: Check for dockerenv file
