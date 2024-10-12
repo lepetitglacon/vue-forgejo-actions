@@ -48,3 +48,7 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Check out repository code
+        uses: actions/checkout@v4
+#        with:
+#          github-server-url: 'http://127.0.0.1:3000'
