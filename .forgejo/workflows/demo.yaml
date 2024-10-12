@@ -37,17 +37,9 @@ jobs:
   container-test-job:
     runs-on: docker
     container:
-      image: node:18
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - ${{ github.workspace }}:/app
-      extra_hosts:
-          - "host.docker.internal:172.0.0.1"
-          - "host.docker.internal:localhost"
+      image: node:16-bullseye
       network: "host"
+      network_mode: host
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
