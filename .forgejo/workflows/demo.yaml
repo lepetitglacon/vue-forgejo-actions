@@ -35,9 +35,8 @@ on:
     branches: [ main ]
 jobs:
   container-test-job:
-    runs-on: docker
+    runs-on: ubuntu-latest
     container:
-      image: ubuntu-latest
       options: '--network=host'
     steps:
       - name: Check for dockerenv file
