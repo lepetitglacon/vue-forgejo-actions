@@ -20,5 +20,16 @@ jobs:
         run: 'npm run test:unit'
       - name: Unit test
         run: 'npm run build'
-      - name: Unit e2e
-        run: 'npm run test:e2e:dev'
+  cypress-e2e:
+    container:
+      image: cypress/browsers:node-20.14.0-chrome-126.0.6478.114-1-ff-127.0.1-edge-126.0.2592.61-1
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          browser: chrome
