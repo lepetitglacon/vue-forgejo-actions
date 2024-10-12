@@ -18,5 +18,7 @@ jobs:
         run: 'npm i'
       - name: Unit test
         run: 'npm run test:unit'
+      - name: Unit test
+        run: 'npm run build'
       - name: Unit e2e
         run: 'npm run test:e2e'
