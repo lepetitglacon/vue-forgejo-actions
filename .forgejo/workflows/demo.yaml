@@ -42,6 +42,8 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Setup node
+        uses: actions/setup-node@v4
       - name: Check out repository code
         uses: actions/checkout@v4
 #        with:
