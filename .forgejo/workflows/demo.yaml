@@ -36,11 +36,20 @@ on:
 jobs:
   container-test-job:
     runs-on: docker
+    container:
+      image: node:18
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - ${{ github.workspace }}:/app
+      extra_hosts:
+          - "host.docker.internal:172.17.0.1"
     steps:
-      - run: 'cd ../'
-      - run: 'ls'
-      - uses: actions/checkout@v4
-      - run: 'npm i'
-      - run: 'npm update'
-      - run: 'npm audit fix'
-      - run: 'npm run test:e2e'
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Check out repository code
+        uses: actions/checkout@v4
+#        with:
+#          github-server-url: 'http://127.0.0.1:3000'
