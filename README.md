@@ -8,7 +8,7 @@ This app is a POC / Tutorial to run [Forgero](https://forgejo.org/) [Actions](ht
 * A testing server (will be your own machine in this tutorial)
 
 ## Network Infrastructure
-mettre l'image
+![img.png](img.png)
 
 ## Install Forgejo
 1. Pull the docker image
